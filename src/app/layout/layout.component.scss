@@ -1,0 +1,8 @@
+:host {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+}
+.sidebar-container{
+  display: grid;
+  grid-template-rows: 3vh 1fr;
+}
