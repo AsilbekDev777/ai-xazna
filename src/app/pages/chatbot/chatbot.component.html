@@ -1,1 +1,53 @@
-<p>chatbot works!</p>
+<div class="container ">
+    <ng-container *ngIf="!isChatStarted">
+      <div class="logo">
+        <img src="/assets/images/ai-xazna-logo.svg" alt="">
+        <span>AI Xazna</span>
+      </div>
+      <p class="subtitle">Привет! Чем могу помочь? 😊</p>
+    </ng-container>
+
+    <!-- Agar chat boshlangan bo'lsa -->
+    <ng-container *ngIf="isChatStarted">
+      <div class="chat-message bot">
+        <div class="message">
+          <p>Привет! Чем могу помочь?</p>
+        </div>
+      </div>
+      <div class="chat-message user">
+        <div class="message">
+          <p>{{ message }}</p>
+        </div>
+      </div>
+    </ng-container>
+    <div class="search-box flex flex-col">
+      <input type="text" placeholder="Спросите что-нибудь..." (input)="onInputChange($event)"/>
+      <div class="buttons mt-4">
+        <div class="buttons-left ">
+          <button class="attach flex flex-row items-center">
+            <img src="/assets/icons/chat-bot-page-icons/attach.svg" alt="attach">
+            <p class="items-text">Прикрепить</p>
+          </button>
+          <button class="search flex flex-row items-center">
+            <img src="/assets/icons/chat-bot-page-icons/search.svg" alt="search">
+            <p class="items-text">Поиск</p>
+          </button>
+        </div>
+        <div class="buttons-right">
+          <button class="voice flex flex-row items-center">
+            <img src="/assets/icons/chat-bot-page-icons/voice.svg" alt="voice">
+           <p class="items-text">Голос</p>
+          </button>
+          <button
+            class="send w-9 h-9"
+            [class.active]="isActive"
+            [disabled]="!isActive"
+            (click)="sendMessage()"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright ©2025 <a href="#">AIXazna</a>. All Rights Reserved</p>
+    </footer>
+</div>

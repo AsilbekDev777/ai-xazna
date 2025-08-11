@@ -25,9 +25,34 @@
   height: 2rem;
   border-radius: 50%;
 }
-li :hover{
-  list-style: none;
-  border: 1px solid #62C0693D
+.main-menu-list{
+  display: grid;
+  grid-gap: .5rem;
+}
+.menu-item{
+  padding: 10px 5px;
+  cursor: pointer;
+  border:1px transparent solid;
+  background: none;
+  color:#434956;
+  display: grid;
+  grid-template-columns:16px 1fr max-content;
+  grid-gap: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  font-size: 14px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+.router-link-active {
+  background: #62C0691A;
+  border: 1px solid #62C0693D;
+  border-radius: 12px;
+  font-weight: 500;
+}
+.list{
+  margin: 0 2rem;
 }
 .sidebar-footer-container{
   display: flex;

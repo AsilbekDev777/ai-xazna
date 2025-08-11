@@ -2,27 +2,19 @@ import { Component } from '@angular/core';
 import {NgIf} from '@angular/common';
 
 @Component({
-  selector: 'app-chatbot',
+  selector: 'app-voice-to-text',
   standalone: true,
   imports: [
     NgIf
   ],
-  templateUrl: './chatbot.component.html',
-  styleUrl: './chatbot.component.scss'
+  templateUrl: './voice-to-text.component.html',
+  styleUrl: './voice-to-text.component.scss'
 })
-export class ChatbotComponent {
+export class VoiceToTextComponent {
   isActive = false;
-  isChatStarted = false; // chat boshlangani
-  message = '';
 
   onInputChange(event: Event) {
     const value = (event.target as HTMLInputElement).value.trim();
     this.isActive = value.length > 0;
   }
-  sendMessage() {
-    if (this.isActive) {
-      this.isChatStarted = true;
-    }
-  }
 }
-

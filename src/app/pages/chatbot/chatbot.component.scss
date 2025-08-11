@@ -1,0 +1,131 @@
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+  color: var(--light-neutral-700);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-top: 4px;
+  color: var(--light-neutral-700);
+}
+
+.search-box {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background: #62C0690D;
+  border-radius: 10px;
+  border: 1px solid #62C06933;
+  padding: 10px;
+  width: 70%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+  input {
+    flex: 1;
+    border: 1px solid #62C06933;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .buttons-left, .buttons-right {
+    display: flex;
+    gap: 6px;
+    .items-text{
+      font-size: 12px;
+      line-height: 120%;
+      font-weight: 500;
+      color: var(--light-neutral);
+    }
+    button.send{
+      padding: .5rem;
+      background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: not-allowed;
+      &:hover{
+        background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+    button.send.active{
+      background: var(--xazna-green);
+      background-image: url("/assets/icons/chat-bot-page-icons/arrowUpWhite.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 36px;
+      height: 36px;
+      border: none;
+      cursor: pointer;
+    }
+    button {
+      border: 1px solid #4D6BFE4D;
+      background: #f2f5f2;
+      border-radius: 32px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        background: #e8eee8;
+      }
+    }
+  }
+
+  .buttons-left {
+    margin-left: 10px;
+  }
+
+  .buttons-right {
+    margin-left: 10px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: #888;
+
+  a {
+    text-decoration: none;
+    color: #5ca85c;
+  }
+}
