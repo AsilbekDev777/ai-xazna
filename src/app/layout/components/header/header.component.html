@@ -4,15 +4,40 @@
       <div class="header-left-content-image p-2">
         <img src="/assets/icons/header/rocket.svg" alt="roket">
       </div>
-      <div class="header-left-content-items ">
-        <div class="header-left-content-items-upgrade flex flex-row">
+
+      <div class="header-left-content-items">
+        <!-- Upgrade button -->
+        <div
+          class="header-left-content-items-upgrade flex flex-row"
+          (click)="toggleDropdown()"
+        >
           <p class="upgrade">Upgrade</p>
-          <img src="/assets/icons/header/arrowDown.svg" alt="arrowDownm">
+          <img
+            src="/assets/icons/header/arrowDown.svg"
+            alt="arrowDown"
+            [class.rotate]="isOpen"
+          >
         </div>
+
+        <!-- Selected version -->
         <p class="header-left-content-items-version">
-          2.1v Flash
+          {{ selectedVersion.label }}
         </p>
+
+        <!-- Dropdown menu -->
+        <div class="dropdown-menu" *ngIf="isOpen">
+          <div
+            class="dropdown-item"
+            *ngFor="let v of versions"
+            (click)="selectVersion(v)"
+          >
+            {{ v.label }}
+          </div>
+        </div>
       </div>
+
+
+
     </div>
     <div class="header-right-content">
       <div class="header-right-content-buttons flex flex-row">

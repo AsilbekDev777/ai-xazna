@@ -1,0 +1,169 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.translate-section{
+  width: 100%;
+}
+.header-item{
+  margin-top: 10rem;
+}
+.logo-header{
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--light-neutral-700);
+  padding-left: .3rem;
+}
+.logo-text{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--light-neutral-700);
+  text-align: center;
+}
+.footer-item{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 12rem;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #62C0690D;
+  border-radius: 10px;
+  border: 1px solid #62C06933;
+  padding: 10px;
+  width: 70%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-top: 20px;
+
+  input {
+    border: 1px solid #62C06933;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+    background: #ffffff;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .buttons-left,
+  .buttons-right {
+    gap: 6px;
+    display: flex;
+    .items-text{
+      line-height: 120%;
+      font-weight: 500;
+      color: #434956;
+      font-size: 12px;
+    }
+    .send{
+      padding: .5rem;
+      background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: not-allowed;
+      &:hover{
+        background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+
+      }
+    }
+    .send.active{
+      background: var(--xazna-green);
+      background-image: url("/assets/icons/chat-bot-page-icons/arrowUpWhite.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 36px;
+      height: 36px;
+      border: none;
+      cursor: pointer;
+    }
+    .attach{
+      padding: .5rem;
+      background-image: url("/assets/icons/chat-bot-page-icons/attach.svg");
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      &:hover{
+        background-image: url("/assets/icons/chat-bot-page-icons/attach.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 36px;
+        height: 36px;
+      }
+    }
+    .btn-middle{
+      padding: .5rem;
+      background-image: url("/assets/icons/cross.svg");
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      &:hover{
+        background-image: url("/assets/icons/cross.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 36px;
+        height: 36px;
+      }
+    }
+    button {
+      border: 1px solid #4D6BFE4D;
+      background: #f2f5f2;
+      border-radius: 32px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        background: #e8eee8;
+      }
+    }
+  }
+
+  .buttons-left {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .buttons-left select {
+    border: 1px solid #cceccc;
+    background-color: #f6fff7;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--light-neutral);
+    outline: none;
+    cursor: pointer;
+
+    appearance: none;
+    background-image: url("/assets/icons/select-icons.svg");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding: 6px 28px 6px 14px;
+
+    transition: border-color 0.2s ease;
+  }
+
+  .buttons-right {
+    margin-left: 10px;
+  }
+}

@@ -11,10 +11,5 @@ import {NgIf} from '@angular/common';
   styleUrl: './voice-to-text.component.scss'
 })
 export class VoiceToTextComponent {
-  isActive = false;
 
-  onInputChange(event: Event) {
-    const value = (event.target as HTMLInputElement).value.trim();
-    this.isActive = value.length > 0;
-  }
 }

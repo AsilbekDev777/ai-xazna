@@ -208,35 +208,19 @@
   font-size: 14px;
   white-space: nowrap;
 }
-.register-body-content-form-buttons-socials{
-  display: flex;
-  flex-direction: row;
+.main-form-content-body-google{
+  padding: .5rem 0;
+  width: 100%;
   align-items: center;
-  margin-bottom: 1rem;
+  justify-content: center;
+  border: 1px solid var(--xazna-green);
+  border-radius: 2rem;
 }
-.register-body-content-form-buttons-socials-img {
-  margin: 0 auto;
-}
-.register-body-content-form-buttons-socials-facebook{
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--light-neutral-300);
-  border-radius: 24px;
-  margin: 0 8px 0 0;
-}
-.register-body-content-form-buttons-socials-instagram{
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--light-neutral-300);
-  border-radius: 24px;
-  margin: 0 8px 0 0;
-}
-.register-body-content-form-buttons-socials-google{
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--light-neutral-300);
-  border-radius: 24px;
-  margin: 0 8px 0 0;
+.main-form-content-body-google-text{
+  margin-left: .5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
 }
 .register-body-policy{
   display: flex;

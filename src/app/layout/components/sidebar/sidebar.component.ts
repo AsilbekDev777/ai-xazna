@@ -26,14 +26,14 @@ export class SidebarComponent {
       path:'chat-bot',
     },
     {
-      label:'Nutqdan matnga o‘girish',
-      icon:'voiceToText',
-      path:'voice-to-text',
-    },
-    {
       label:'Matndan nutqqa o‘girish',
       icon:'textToVoice',
       path:'text-to-voice',
+    },
+    {
+      label:'Nutqdan matnga o‘girish',
+      icon:'voiceToText',
+      path:'voice-to-text',
     },
     {
       label:'Ovozli identifikatsiya',

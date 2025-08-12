@@ -1,1 +1,51 @@
-<p>text-to-voice works!</p>
+<div class="translate-section">
+  <div class="container flex flex-col">
+    <div class="header-item">
+      <div class="header-item-logo-section flex flex-row items-center justify-center p-3">
+        <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
+        <h1 class="logo-header">Hello, I’m AIXazna</h1>
+      </div>
+      <p class="logo-text">
+        How can I make things easier for you?
+      </p>
+    </div>
+    <div class="footer-item">
+      <div class="search-box flex flex-col">
+        <input type="text" placeholder="Message AIXazna..." (input)="onInputChange($event)"/>
+        <div class="buttons mt-4">
+          <div class="buttons-left ">
+            <select>
+              <option>Alisa</option>
+            </select>
+            <select>
+              <option>Neytral</option>
+            </select>
+            <select>
+              <option>O'zbekcha</option>
+            </select>
+            <select>
+              <option>Stereo</option>
+            </select>
+            <select>
+              <option>64k</option>
+            </select>
+            <select>
+              <option>22050</option>
+            </select>
+            <select>
+              <option>Waw</option>
+            </select>
+          </div>
+          <div class="buttons-right">
+            <button class="attach"></button>
+            <button *ngIf="isActive" class="btn-middle"></button>
+            <button class="send"
+              [class.active]="isActive"
+              [disabled]="!isActive">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

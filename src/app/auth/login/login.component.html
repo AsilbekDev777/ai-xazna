@@ -17,9 +17,9 @@
         <div class="go-back-content-icon">
           <img src="/assets/icons/arrow-narrow-left.svg" alt="arrowLeft">
         </div>
-        <div class="go-back-content-text">
+        <a routerLink="" class="go-back-content-text">
           Back Now
-        </div>
+        </a>
       </div>
       <div class="main-form-content">
         <div class="main-form-content-head">
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="main-form-content-body-SignUp">
-            Don’t have an account? <a class="main-form-content-body-SignUp-link" href="#">Sign Up</a>
+            Don’t have an account? <a routerLink="/sign-up" class="main-form-content-body-SignUp-link">Sign Up</a>
           </div>
           <div class="main-form-content-body-buttons">
             <button class="main-form-content-body-buttons-btn">
@@ -58,17 +58,10 @@
               </div>
               <hr class="main-form-content-body-buttons-excuse-line">
             </div>
-            <div class="main-form-content-body-socials">
-              <button class="main-form-content-body-socials-facebook">
-                <img class="main-form-content-body-socials-img" src="/assets/icons/social-media/facebook.svg" alt="facebook">
-              </button>
-              <button class="main-form-content-body-socials-instagram">
-                <img class="main-form-content-body-socials-img" src="/assets/icons/social-media/instagram.svg" alt="instagram">
-              </button>
-              <button class="main-form-content-body-socials-google">
-                <img class="main-form-content-body-socials-img" src="/assets/icons/social-media/google.svg" alt="google">
-              </button>
-            </div>
+            <button class="main-form-content-body-google flex flex-row">
+              <img class="main-form-content-body-socials-img" src="/assets/icons/social-media/google.svg" alt="facebook">
+              <p class="main-form-content-body-google-text">Sign in with Google</p>
+            </button>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
-:host{
+:host {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -45,7 +46,7 @@
   padding: 10px;
   width: 70%;
   box-sizing: border-box;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
   input {
     flex: 1;
@@ -58,34 +59,40 @@
     border-radius: 8px;
 
   }
-  .buttons{
+
+  .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
+
   .buttons-left, .buttons-right {
     display: flex;
     gap: 6px;
-    .items-text{
+
+    .items-text {
       font-size: 12px;
       line-height: 120%;
       font-weight: 500;
       color: var(--light-neutral);
     }
-    button.send{
+
+    button.send {
       padding: .5rem;
       background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
       background-repeat: no-repeat;
       background-position: center center;
       cursor: not-allowed;
-      &:hover{
+
+      &:hover {
         background-image: url("/assets/icons/chat-bot-page-icons/arrowUp.svg");
         background-repeat: no-repeat;
         background-position: center center;
       }
     }
-    button.send.active{
+
+    button.send.active {
       background: var(--xazna-green);
       background-image: url("/assets/icons/chat-bot-page-icons/arrowUpWhite.svg");
       background-repeat: no-repeat;
@@ -95,6 +102,7 @@
       border: none;
       cursor: pointer;
     }
+
     button {
       border: 1px solid #4D6BFE4D;
       background: #f2f5f2;
@@ -118,14 +126,142 @@
   }
 }
 
-footer {
-  position: absolute;
-  bottom: 10px;
-  font-size: 12px;
-  color: #888;
+/* Общие стили чата */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 55vh;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100%;
+}
 
-  a {
-    text-decoration: none;
-    color: #5ca85c;
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  /*  Bots message */
+  &.bot {
+    .avatar img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .message-content {
+      max-width: 80%;
+    }
+
+    .message-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+
+      .sender-name {
+        font-weight: 400;
+        font-size: 12px;
+        color: #7B8088;
+      }
+
+      .message-time {
+        font-size: 12px;
+        color: #7B8088;
+      }
+    }
+
+    .message-text {
+      background: #F5F8FF;
+      border: 1px solid #E0E7FF;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    .bot-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      padding-left: 8px;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all 0.2s;
+        padding: 4px;
+        border-radius: 4px;
+
+        &:hover {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.05);
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* Users message */
+  &.user {
+    justify-content: flex-end;
+
+    .message-content {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .message-time {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .message-text {
+      background: #00B8D90D;
+      border: 1px solid #00B8D933;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    .user-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all 0.2s;
+        padding: 2px;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        img {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
   }
 }
