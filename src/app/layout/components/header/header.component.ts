@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { NgForOf, NgIf } from '@angular/common';
 import { SvgIconComponent } from '../../../utils/svg-icon/svg-icon.component';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -15,7 +15,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isOpen = false;
 
   versions = [
@@ -38,6 +38,9 @@ export class HeaderComponent {
   @Output() onMiniVariant: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private translate: TranslateService) {
+
+  }
+  ngOnInit() {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       const savedLang = localStorage.getItem('lang');
       if (savedLang) {
