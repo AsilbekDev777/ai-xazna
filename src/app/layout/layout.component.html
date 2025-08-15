@@ -1,10 +1,12 @@
-<app-sidebar></app-sidebar>
-<div class="sidebar-container">
-  <app-header></app-header>
-  <div>
-    <router-outlet></router-outlet>
+<div class="layout-container">
+  <app-sidebar class="sidebar" [miniVariant]="minVariant" (onMiniVariant)="isOpen($event)"></app-sidebar>
+  <div class="sidebar-container">
+    <app-header></app-header>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    <footer class="mb-2">
+      <p>Copyright ©2025 <a href="#">AIXazna</a>. All Rights Reserved</p>
+    </footer>
   </div>
-  <footer class="mb-2">
-    <p>Copyright ©2025 <a href="#">AIXazna</a>. All Rights Reserved</p>
-  </footer>
 </div>

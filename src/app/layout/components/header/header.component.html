@@ -1,21 +1,21 @@
 <div class="header-section">
   <div class="header-container flex justify-between">
-    <div class="header-left-content flex flex-row items-center">
-      <div class="header-left-content-image p-2">
+    <div class="header-left-content flex flex-row items-center" [class.collapsed]="miniVariant">
+      <button class="header-back-narrow" (click)="toggleCollapsed()">
+        <img src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="back">
+      </button>
+      <div class="header-left-content-image p-1">
         <img src="/assets/icons/header/rocket.svg" alt="roket">
       </div>
 
       <div class="header-left-content-items">
         <!-- Upgrade button -->
-        <div
-          class="header-left-content-items-upgrade flex flex-row"
-          (click)="toggleDropdown()"
-        >
-          <p class="upgrade">Upgrade</p>
+        <div class="header-left-content-items-upgrade flex flex-row">
+          <p class="upgrade">{{ 'UPGRADE' | translate }}</p>
           <img
             src="/assets/icons/header/arrowDown.svg"
             alt="arrowDown"
-            [class.rotate]="isOpen"
+            class="arrow-icon"
           >
         </div>
 
@@ -25,7 +25,7 @@
         </p>
 
         <!-- Dropdown menu -->
-        <div class="dropdown-menu" *ngIf="isOpen">
+        <div class="dropdown-menu">
           <div
             class="dropdown-item"
             *ngFor="let v of versions"
@@ -35,17 +35,41 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
     <div class="header-right-content">
       <div class="header-right-content-buttons flex flex-row">
-        <button class="flex flex-row items-center pr-4 language">
-          <img class="pr-2" src="/assets/icons/header/flags.svg" alt="flag">
-          <p class="pr-2 language-text">Ru</p>
-          <img src="/assets/icons/header/arrowDown.svg" alt="arrow down">
-        </button>
+        <div class="relative inline-block text-left pr-4">
+          <!-- Language Button -->
+          <button
+            class="language-btn"
+            (click)="toggleLanguage()"
+          >
+            <svg class="flag-icon" [icon]="selectedLanguage.icon"></svg>
+            <p class="language-text">{{ selectedLanguage.value }}</p>
+            <img
+              class="arrow-icon"
+              src="/assets/icons/header/arrowDown.svg"
+              alt="arrow down"
+            />
+          </button>
+
+          <!-- Dropdown Menu of languages-->
+          <div
+            class="language-dropdown"
+            *ngIf="isLanguages"
+          >
+            <div
+              class="language-item"
+              *ngFor="let l of languages"
+              (click)="selectLanguage(l)"
+            >
+              <svg class="flag-icon" [icon]="l.icon" ></svg>
+              <span class="language-text">{{ l.value }}</span>
+            </div>
+          </div>
+
+        </div>
+
         <button class="pr-4 moon">
           <img src="/assets/icons/header/moon.svg" alt="moon">
         </button>

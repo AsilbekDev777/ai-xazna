@@ -1,0 +1,36 @@
+{
+  "UPGRADE": "Versiya",
+  "sidebar": {
+    "MAINPAGE": "Asosiy sahifa",
+    "CHATBOT": "Chat bot",
+    "TEXTTOVOICE": "Matndan ovozga o‘giruvchi",
+    "VOICETOTEXT": "Ovozdan matnga o‘giruvchi",
+    "VOICEIDENTITY": "Ovoz orqali shaxsni aniqlash",
+    "PROTOKOL": "Protokol",
+    "BALANCE": "Balans",
+    "SUPPORT": "Yordam",
+    "CUSTOMBOTS": "Maxsus botlar",
+    "SETTINGS": "Sozlamalar",
+    "CURRENTBALANCE": "Balansingiz",
+    "SUM": "so‘m"
+  },
+  "chatbot": {
+    "HELLO": "Salom! Sizga qanday yordam bera olaman? 😊",
+    "ATTACH": "Biriktirish",
+    "SEARCH": "Qidirish",
+    "VOICE": "Ovoz",
+    "PLACEHOLDER": "Savolingizni yozing"
+  },
+  "texttovoice": {
+    "HELLO": "Salom, men AIXazna",
+    "QUESTION": "Sizga qanday qilib ishlaringizni osonlashtira olaman?",
+    "PLACEHOLDER": "AIXazna’ga xabar yozing..."
+  },
+  "voicetotext": {
+    "CHOOSE": "Faylni tanlang yoki bu yerga olib kelib tashlang.",
+    "FORMATS": "OGG, MP3, WAV, X-M4A, AAC, MPEG, FLAC formatlarini qo‘llab-quvvatlaydi.",
+    "BUTTONS": "Faylni tanlash",
+    "RESULT": "Transkripsiya natijasi hali mavjud emas",
+    "SELECTED": "Tanlangan fayl:"
+  }
+}

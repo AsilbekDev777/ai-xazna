@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import {NgIf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-text-to-voice',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './text-to-voice.component.html',
   styleUrl: './text-to-voice.component.scss'

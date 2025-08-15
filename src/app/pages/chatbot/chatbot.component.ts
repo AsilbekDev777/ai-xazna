@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 interface Message {
   text: string;
@@ -11,7 +12,8 @@ interface Message {
   imports: [
     NgIf,
     NgForOf,
-    NgClass
+    NgClass,
+    TranslatePipe
   ],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss'

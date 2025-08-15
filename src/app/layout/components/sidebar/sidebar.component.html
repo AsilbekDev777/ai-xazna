@@ -1,17 +1,20 @@
-<div class="sidebar-section bg-[#62C06933] h-screen">
-  <div class="sidebar-section-container">
+<div class="sidebar-section h-screen" [class.collapsed]="miniVariant">
+  <div class="sidebar-section-container" >
     <!--Sidebar header start-->
       <div class="sidebar-header">
         <div class="sidebar-header-container flex flex-row justify-around">
           <div class="sidebar-header-logos flex flex-row justify-center items-center">
-            <div class="sidebar-header-logos-image mr-2">
+            <div class="sidebar-header-logos-image mr-2"
+                 [class.hover-click]="miniVariant"
+                 (click)="miniVariant && toggleCollapsed()"
+            >
               <img  src="/assets/images/ai-xazna-logo.svg" alt="logo">
             </div>
-            <p class="sidebar-header-logos-text">
+            <p class="sidebar-header-logos-text" *ngIf="!miniVariant">
               AI Xazna
             </p>
           </div>
-          <button class="sidebar-header-button"><img class="m-auto" src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack"></button>
+          <button class="sidebar-header-button" *ngIf="!miniVariant" (click)="toggleCollapsed()"><img class="back-icon " src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack"></button>
         </div>
       </div>
     <!--  Sidebar header end-->
@@ -23,20 +26,23 @@
           <li class="list">
             <a [routerLink]="menuItem.path" class="menu-item" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }">
               <svg class="svgs w-5 h-5" [icon]="menuItem.icon"></svg>
-              <span>{{menuItem.label}}</span>
+              <span *ngIf="!miniVariant">{{menuItem.label | translate}}</span>
             </a>
           </li>
-
         }
       </ul>
     </nav>
-      <div class="sidebar-footer flex justify-center mt-28">
+  <!--  Sidebar content end-->
+
+  <!--  Sidebar balance start-->
+    <div class="sidebar-footer flex justify-center mt-24" *ngIf="!miniVariant">
         <div class="sidebar-footer-container">
-          <p class="sidebar-footer-title">Ваш баланс</p>
+          <p class="sidebar-footer-title">{{'sidebar.CURRENTBALANCE' | translate}}</p>
           <div class="sidebar-footer-subtitle">
-            <strong class="sidebar-footer-subtitle-text">3 800 510</strong> <p>сум</p>
+            <strong class="sidebar-footer-subtitle-text">3 800 510</strong> <p>{{'sidebar.SUM' | translate}}</p>
           </div>
         </div>
       </div>
   </div>
+  <!--  Sidebar balance end-->
 </div>

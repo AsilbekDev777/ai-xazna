@@ -1,17 +1,21 @@
 <div class="translate-section">
   <div class="container flex flex-col">
+    <!--Header start-->
     <div class="header-item">
       <div class="header-item-logo-section flex flex-row items-center justify-center p-3">
         <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
-        <h1 class="logo-header">Hello, I’m AIXazna</h1>
+        <h1 class="logo-header">{{"texttovoice.HELLO" | translate}}</h1>
       </div>
       <p class="logo-text">
-        How can I make things easier for you?
+        {{"texttovoice.QUESTION" | translate}}
       </p>
     </div>
+    <!--Header End-->
+
+    <!--Input and Selects start-->
     <div class="footer-item">
       <div class="search-box flex flex-col">
-        <input type="text" placeholder="Message AIXazna..." (input)="onInputChange($event)"/>
+        <input type="text" placeholder="{{'texttovoice.PLACEHOLDER' | translate}}" (input)="onInputChange($event)"/>
         <div class="buttons mt-4">
           <div class="buttons-left ">
             <select>
@@ -47,5 +51,6 @@
         </div>
       </div>
     </div>
+    <!--Input and Selects end-->
   </div>
 </div>

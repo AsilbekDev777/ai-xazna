@@ -1,1 +1,17 @@
-<h2>Voice to text </h2>
+<div class="upload-container">
+  <div class="upload-box"
+       (drop)="onDrop($event)"
+       (dragover)="onDragOver($event)">
+    <img src="/assets/icons/voice-to-change/upload-to-cloude.svg" alt="upload" />
+    <p>{{ "voicetotext.CHOOSE"| translate}}</p>
+    <span>{{ "voicetotext.FORMATS"| translate}}</span>
+    <br />
+    <input type="file" #fileInput hidden (change)="onFileSelected($event)">
+    <button class="browse-btn" (click)="fileInput.click()">{{ "voicetotext.BUTTONS"| translate}}</button>
+  </div>
+  <button class="change-btn"><img src="/assets/icons/voice-to-change/change.svg" alt="icon"></button>
+  <div class="result-box">
+    <p *ngIf="!selectedFile">{{ "voicetotext.RESULT"| translate}}</p>
+    <p *ngIf="selectedFile">{{ "voicetotext.SELECTED"| translate}} {{ selectedFile.name }}</p>
+  </div>
+</div>

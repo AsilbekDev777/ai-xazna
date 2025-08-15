@@ -15,5 +15,8 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
-
+  minVariant = false;
+  isOpen(event:boolean) {
+    this.minVariant = event;
+  }
 }

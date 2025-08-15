@@ -1,10 +1,11 @@
 <div class="container ">
+<!--  Chat bot before input send -->
   <ng-container *ngIf="!isStarted">
     <div class="logo">
       <img src="/assets/images/ai-xazna-logo.svg" alt="">
       <span>AI Xazna</span>
     </div>
-    <p class="subtitle">Привет! Чем могу помочь? 😊</p>
+    <p class="subtitle">{{ 'chatbot.HELLO' | translate }}</p>
   </ng-container>
 
   <!-- Chat response check -->
@@ -50,7 +51,7 @@
           </div>
         </ng-container>
 
-        <!-- Сообщение ПОЛЬЗОВАТЕЛЯ -->
+        <!-- Chat user -->
         <ng-container *ngIf="msg.sender === 'user'">
           <div class="message-content user-message">
             <div class="message-time"></div>
@@ -70,23 +71,24 @@
       </div>
     </div>
   </ng-container>
+<!--  Buttons-->
   <div class="search-box flex flex-col">
-    <input type="text" placeholder="Спросите что-нибудь..." (input)="onInputChange($event)" [value]="messageText"/>
+    <input type="text" placeholder="{{ 'chatbot.PLACEHOLDER' | translate }}" (input)="onInputChange($event)" [value]="messageText"/>
     <div class="buttons mt-4">
       <div class="buttons-left ">
         <button class="attach flex flex-row items-center">
           <img src="/assets/icons/chat-bot-page-icons/attach.svg" alt="attach">
-          <p class="items-text">Прикрепить</p>
+          <p class="items-text">{{ 'chatbot.ATTACH' | translate }}</p>
         </button>
         <button class="search flex flex-row items-center">
           <img src="/assets/icons/chat-bot-page-icons/search.svg" alt="search">
-          <p class="items-text">Поиск</p>
+          <p class="items-text">{{ 'chatbot.SEARCH' | translate }}</p>
         </button>
       </div>
       <div class="buttons-right">
         <button class="voice flex flex-row items-center">
           <img src="/assets/icons/chat-bot-page-icons/voice.svg" alt="voice">
-          <p class="items-text">Голос</p>
+          <p class="items-text">{{ 'chatbot.VOICE' | translate }}</p>
         </button>
         <button
           class="send w-9 h-9"

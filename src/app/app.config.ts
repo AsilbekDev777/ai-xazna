@@ -1,22 +1,27 @@
 import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import {provideHttpClient} from '@angular/common/http';
-import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
+import {provideHttpClient, withFetch} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-registerLocaleData(en);
+import {provideTranslateService} from '@ngx-translate/core';
+import {provideTranslateHttpLoader} from '@ngx-translate/http-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient(),
+    provideHttpClient(withFetch()),
+    importProvidersFrom(
+      FormsModule
+    ),
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({prefix:'./i18n/', suffix:'.json'}),
+      fallbackLang: 'en'
+    }),
+    provideAnimationsAsync(),
+    provideHttpClient(),
   ]
 };

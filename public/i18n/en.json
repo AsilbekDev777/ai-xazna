@@ -1,0 +1,36 @@
+{
+  "UPGRADE": "Version",
+  "sidebar": {
+    "MAINPAGE": "Main page",
+    "CHATBOT": "Chat bot",
+    "TEXTTOVOICE": "Text-to-speech converter",
+    "VOICETOTEXT": "Speech to text conversion",
+    "VOICEIDENTITY": "Voice identification",
+    "PROTOKOL": "Protocol",
+    "BALANCE": "Balance",
+    "SUPPORT": "Support",
+    "CUSTOMBOTS": "Custom bots",
+    "SETTINGS": "Settings",
+    "CURRENTBALANCE": "Your balance",
+    "SUM": "sum"
+  },
+  "chatbot": {
+    "HELLO": "Hi! How can I help you? 😊",
+    "ATTACH": "Attach",
+    "SEARCH": "Search",
+    "VOICE": "Voice",
+    "PLACEHOLDER": "Ask something"
+  },
+  "texttovoice": {
+    "HELLO": "Hello, I’m AIXazna",
+    "QUESTION": "How can I make things easier for you?",
+    "PLACEHOLDER": "Message AIXazna..."
+  },
+  "voicetotext":{
+    "CHOOSE":"Choose a file drag & drop it here.",
+    "FORMATS": "Supports OGG, MP3, WAV, X-M4A, AAC, MPEG, FLAC formats.",
+    "BUTTONS": "Browse File",
+    "RESULT": "Transcription result is not available yet",
+    "SELECTED": "Selected file:"
+  }
+}

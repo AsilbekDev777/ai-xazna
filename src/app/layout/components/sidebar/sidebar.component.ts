@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import {SvgIconComponent} from '../../../svg-icon/svg-icon.component';
+import {Component, Input, Output,EventEmitter} from '@angular/core';
+import {SvgIconComponent} from '../../../utils/svg-icon/svg-icon.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {NgIf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +10,9 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   imports: [
     SvgIconComponent,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
@@ -16,52 +20,52 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 export class SidebarComponent {
   menuItems = [
     {
-      label:'Bosh sahifa',
+      label:'sidebar.MAINPAGE',
       icon:'home',
       path:'',
     },
     {
-      label:'Chat bot ',
+      label:'sidebar.CHATBOT',
       icon:'chat',
       path:'chat-bot',
     },
     {
-      label:'Matndan nutqqa o‘girish',
+      label:'sidebar.TEXTTOVOICE',
       icon:'textToVoice',
       path:'text-to-voice',
     },
     {
-      label:'Nutqdan matnga o‘girish',
+      label:'sidebar.VOICETOTEXT',
       icon:'voiceToText',
       path:'voice-to-text',
     },
     {
-      label:'Ovozli identifikatsiya',
+      label:'sidebar.VOICEIDENTITY',
       icon:'microphone',
       path:'voice-identity',
     },
     {
-      label:'Protokol',
+      label:'sidebar.PROTOKOL',
       icon:'protocol',
       path:'protokol',
     },
     {
-      label:'Balans',
+      label:'sidebar.BALANCE',
       icon:'balance',
       path:'balance',
     },
     {
-      label:'Support',
+      label:'sidebar.SUPPORT',
       icon:'support',
       path:'support',
     },
     {
-      label:'Custom Bots',
+      label:'sidebar.CUSTOMBOTS',
       icon:'custom',
       path:'custom-bots',
     },
     {
-      label:'Settings',
+      label:'sidebar.SETTINGS',
       icon:'settings',
       path:'settings',
     },
@@ -69,5 +73,13 @@ export class SidebarComponent {
   activeIndex: number | null = null;
   setActive(index: number) {
     this.activeIndex = index;
+  }
+
+
+  @Input() miniVariant:boolean = false;
+  @Output() onMiniVariant:EventEmitter<boolean> = new EventEmitter<boolean>();
+  toggleCollapsed() {
+    this.miniVariant = !this.miniVariant;
+    this.onMiniVariant.emit(this.miniVariant);
   }
 }
