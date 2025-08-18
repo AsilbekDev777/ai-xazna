@@ -3,9 +3,9 @@
   "sidebar": {
     "MAINPAGE": "Asosiy sahifa",
     "CHATBOT": "Chat bot",
-    "TEXTTOVOICE": "Matndan ovozga o‘giruvchi",
-    "VOICETOTEXT": "Ovozdan matnga o‘giruvchi",
-    "VOICEIDENTITY": "Ovoz orqali shaxsni aniqlash",
+    "TEXTTOVOICE": "Nutqdan matnga o‘girish",
+    "VOICETOTEXT": "Matndan nutqqa o‘girish",
+    "VOICEIDENTITY": "Ovozli identifikatsiya",
     "PROTOKOL": "Protokol",
     "BALANCE": "Balans",
     "SUPPORT": "Yordam",

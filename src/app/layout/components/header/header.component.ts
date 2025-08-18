@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   languages = [
     { label: 'ru', value: 'Rus', icon: 'Rus' },
     { label: 'en', value: 'Eng', icon: 'Eng' },
-    { label: 'uz', value: 'uzbek', icon: 'uzbek' }
+    { label: 'uz', value: 'Uzb', icon: 'Uzb' }
   ];
   selectedLanguage = this.languages[0];
 

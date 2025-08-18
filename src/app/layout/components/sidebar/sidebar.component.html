@@ -1,20 +1,22 @@
 <div class="sidebar-section h-screen" [class.collapsed]="miniVariant">
-  <div class="sidebar-section-container" >
+  <div class="sidebar-section-container" [class.collapsed]="miniVariant" >
     <!--Sidebar header start-->
       <div class="sidebar-header">
         <div class="sidebar-header-container flex flex-row justify-around">
           <div class="sidebar-header-logos flex flex-row justify-center items-center">
-            <div class="sidebar-header-logos-image mr-2"
-                 [class.hover-click]="miniVariant"
-                 (click)="miniVariant && toggleCollapsed()"
-            >
-              <img  src="/assets/images/ai-xazna-logo.svg" alt="logo">
+            <div class="sidebar-header-logos-image mr-2">
+              <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
             </div>
+
             <p class="sidebar-header-logos-text" *ngIf="!miniVariant">
               AI Xazna
             </p>
+            <!-- Bu yerga buttonni kiritdik -->
+            <button class="sidebar-header-button" (click)="toggleCollapsed()">
+              <img class="back-icon" src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack">
+            </button>
+
           </div>
-          <button class="sidebar-header-button" *ngIf="!miniVariant" (click)="toggleCollapsed()"><img class="back-icon " src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack"></button>
         </div>
       </div>
     <!--  Sidebar header end-->

@@ -4,7 +4,6 @@
   width: 18rem;
   transition: width 0.25s ease;
 }
-
 .sidebar-section.collapsed {
   width: 6rem;
 }
@@ -12,29 +11,66 @@
   height: 100%;
   width: 100%;
   overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sidebar-section-container.collapsed {
+  display: block;
 }
 .sidebar-header-container{
   padding-top: 3vh;
   margin-bottom: 3vh;
 }
-.sidebar-header-logos-image.hover-click{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+
 .sidebar-header-logos-text{
   font-size: 24px;
   line-height: 120%;
   font-weight: 600;
+  margin-right: 5rem;
   color: var(--light-neutral-700);
 }
 .sidebar-header-button{
+  position: static;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
   border: 1px solid #4D6BFE33;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  transition: none;
 }
+.sidebar-section.collapsed .sidebar-header-logos {
+  position: relative;
+}
+
+.sidebar-section.collapsed .sidebar-header-logos-image {
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Buttonni logoning ustiga yashirib turadi */
+.sidebar-section.collapsed .sidebar-header-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+/* Hover bo‘lganda logo yo‘qoladi, button chiqadi */
+.sidebar-section.collapsed .sidebar-header-logos:hover .sidebar-header-logos-image {
+  opacity: 0;
+}
+.sidebar-section.collapsed .sidebar-header-logos:hover .sidebar-header-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
 .main-menu-list{
   display: flex;
   flex-direction: column;
@@ -68,6 +104,9 @@
 }
 .list{
   margin: 0 2rem;
+}
+.sidebar-footer{
+  margin-bottom: 1.2rem;
 }
 .sidebar-footer-container{
   display: flex;
