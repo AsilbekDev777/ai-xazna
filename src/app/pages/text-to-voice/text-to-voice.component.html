@@ -1,7 +1,7 @@
 <div class="translate-section">
   <div class="container flex flex-col">
     <!--Header start-->
-    <div class="header-item">
+    <div class="header-item" *ngIf="!sentText">
       <div class="header-item-logo-section flex flex-row items-center justify-center p-3">
         <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
         <h1 class="logo-header">{{"texttovoice.HELLO" | translate}}</h1>
@@ -10,12 +10,16 @@
         {{"texttovoice.QUESTION" | translate}}
       </p>
     </div>
+    <!-- Agar text yuborilgan bo‘lsa shuni ko‘rsatamiz -->
+    <div class="header-item" *ngIf="sentText">
+      <p class="logo-text">{{ sentText }}</p>
+      <audio *ngIf="audioUrl" controls [src]="audioUrl"></audio>
+    </div>
     <!--Header End-->
-
     <!--Input and Selects start-->
     <div class="footer-item">
       <div class="search-box flex flex-col">
-        <input type="text" placeholder="{{'texttovoice.PLACEHOLDER' | translate}}" (input)="onInputChange($event)"/>
+        <input [(ngModel)]="textInput" type="text" placeholder="{{'texttovoice.PLACEHOLDER' | translate}}" (input)="onInputChange($event)"/>
         <div class="buttons mt-4">
           <div class="buttons-left ">
             <select>
@@ -45,7 +49,9 @@
             <button *ngIf="isActive" class="btn-middle"></button>
             <button class="send"
               [class.active]="isActive"
-              [disabled]="!isActive">
+              [disabled]="!isActive"
+             (click)="sendText()"
+            >
             </button>
           </div>
         </div>

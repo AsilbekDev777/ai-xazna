@@ -1,1 +1,6 @@
-<p>voice-identity works!</p>
+<div class="audio-player">
+  <button (click)="togglePlay()">
+    {{ isPlaying ? 'Pause' : 'Play' }}
+  </button>
+  <div #waveform class="w-full"></div>
+</div>

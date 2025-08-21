@@ -16,7 +16,11 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
 })
 export class LayoutComponent {
   minVariant = false;
+  mobileVariant = false;
   isOpen(event:boolean) {
     this.minVariant = event;
+  }
+  isSidebar(event:boolean) {
+    this.mobileVariant = event;
   }
 }

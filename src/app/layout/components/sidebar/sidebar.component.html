@@ -1,46 +1,45 @@
-<div class="sidebar-section h-screen" [class.collapsed]="miniVariant">
-  <div class="sidebar-section-container" [class.collapsed]="miniVariant" >
+<div class="sidebar-section h-screen" [class.mobile]="mobileVariant" [class.collapsed]="miniVariant">
+  <div class="sidebar-section-container" [class.collapsed]="miniVariant">
     <!--Sidebar header start-->
-      <div class="sidebar-header">
-        <div class="sidebar-header-container flex flex-row justify-around">
-          <div class="sidebar-header-logos flex flex-row justify-center items-center">
-            <div class="sidebar-header-logos-image mr-2">
-              <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
-            </div>
-
-            <p class="sidebar-header-logos-text" *ngIf="!miniVariant">
-              AI Xazna
-            </p>
-            <!-- Bu yerga buttonni kiritdik -->
-            <button class="sidebar-header-button" (click)="toggleCollapsed()">
-              <img class="back-icon" src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack">
-            </button>
-
+    <div class="sidebar-header">
+      <div class="sidebar-header-container flex flex-row justify-around">
+        <div class="sidebar-header-logos flex flex-row justify-center items-center">
+          <div class="sidebar-header-logos-image mr-2">
+            <img src="/assets/images/ai-xazna-logo.svg" alt="logo">
           </div>
+          <p class="sidebar-header-logos-text" *ngIf="!miniVariant">
+            AI Xazna
+          </p>
+          <button *ngIf="miniVariant || !miniVariant" class="sidebar-header-button" (click)="toggleCollapsed()">
+            <img class="back-icon" src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="goBack">
+          </button>
         </div>
-        <nav>
-          <ul class="main-menu-list">
-            @for (menuItem of menuItems; track $index) {
-              <li class="list">
-                <a [routerLink]="menuItem.path" class="menu-item" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }">
-                  <svg class="svgs w-5 h-5" [icon]="menuItem.icon"></svg>
-                  <span *ngIf="!miniVariant">{{menuItem.label | translate}}</span>
-                </a>
-              </li>
-            }
-          </ul>
-        </nav>
       </div>
+      <nav>
+        <ul class="main-menu-list">
+          @for (menuItem of menuItems; track $index) {
+            <li class="list">
+              <a [routerLink]="menuItem.path" class="menu-item" routerLinkActive="router-link-active"
+                 [routerLinkActiveOptions]="{ exact: true }">
+                <svg class="svgs w-5 h-5" [icon]="menuItem.icon"></svg>
+                <span *ngIf="!miniVariant">{{ menuItem.label | translate }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
     <!--  Sidebar header end-->
-  <!--  Sidebar balance start-->
+    <!--  Sidebar balance start-->
     <div class="sidebar-footer flex justify-center mt-5" *ngIf="!miniVariant">
-        <div class="sidebar-footer-container">
-          <p class="sidebar-footer-title">{{'sidebar.CURRENTBALANCE' | translate}}</p>
-          <div class="sidebar-footer-subtitle">
-            <strong class="sidebar-footer-subtitle-text">3 800 510</strong> <p>{{'sidebar.SUM' | translate}}</p>
-          </div>
+      <div class="sidebar-footer-container">
+        <p class="sidebar-footer-title">{{ 'sidebar.CURRENTBALANCE' | translate }}</p>
+        <div class="sidebar-footer-subtitle">
+          <strong class="sidebar-footer-subtitle-text">3 800 510</strong>
+          <p>{{ 'sidebar.SUM' | translate }}</p>
         </div>
       </div>
+    </div>
   </div>
   <!--  Sidebar balance end-->
 </div>

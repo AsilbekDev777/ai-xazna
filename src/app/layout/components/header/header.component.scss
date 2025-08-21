@@ -1,6 +1,18 @@
 .header-left-content{
   padding: 1rem 0 1rem 1.5rem;
 }
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.5s ease;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
 .header-back-narrow{
   border: 1px solid rgba(77, 107, 254, 0.2);
   width: 2rem;
@@ -204,4 +216,34 @@
 
 .dropdown-item:hover {
   background: #f2f2f2;
+}
+@media (min-width: 1024px) {
+  .hamburger-btn {
+    display: none;
+  }
+}
+//Tablet
+@media (max-width: 1024px) {
+  .language-text{
+    display: none;
+  }
+  .language-dropdown {
+    width: 60px;
+  }
+}
+//Phone
+@media (max-width: 468px) {
+  .header-left-content {
+    padding: .5rem 0 .5rem 1rem;
+  }
+  .header-right-content-buttons{
+    padding: 0.7rem 1rem 0.7rem 0;
+  }
+  .language-btn{
+    padding: 5px 8px;
+  }
+  .moon{
+    padding: .4rem;
+    margin-right: .5rem;
+  }
 }

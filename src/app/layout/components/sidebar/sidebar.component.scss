@@ -61,7 +61,7 @@
   transition: all 0.3s ease;
   z-index: 2;
 }
-/* Hover bo‘lganda logo yo‘qoladi, button chiqadi */
+/* Hover bo‘lganda logo yo‘qoladi va button chiqadi */
 .sidebar-section.collapsed .sidebar-header-logos:hover .sidebar-header-logos-image {
   opacity: 0;
 }
@@ -141,4 +141,22 @@
   font-weight: 600;
   line-height: 100%;
   margin-right: 0.3rem;
+}
+
+
+@media (max-width: 1024px) {
+  .sidebar-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    background: ghostwhite;
+    transition: transform 0.7s ease;
+  }
+  .sidebar-section.mobile {
+    width: 100%;
+    transform: translateX(0);
+  }
 }

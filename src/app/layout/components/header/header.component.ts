@@ -34,9 +34,6 @@ export class HeaderComponent implements OnInit {
   ];
   selectedLanguage = this.languages[0];
 
-  @Input() miniVariant: boolean = false;
-  @Output() onMiniVariant: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   constructor(private translate: TranslateService) {
 
   }
@@ -50,15 +47,9 @@ export class HeaderComponent implements OnInit {
         this.translate.use(this.selectedLanguage.label);
       }
     } else {
-      // SSR yoki Node.js muhiti
       this.translate.use(this.selectedLanguage.label);
     }
   }
-  toggleCollapsed() {
-    this.miniVariant = !this.miniVariant;
-    this.onMiniVariant.emit(this.miniVariant);
-  }
-
   toggleLanguage() {
     this.isLanguages = !this.isLanguages;
   }
@@ -75,5 +66,15 @@ export class HeaderComponent implements OnInit {
   selectVersion(version: any) {
     this.selectedVersion = version;
     this.isOpen = false;
+  }
+
+  @Input() mobileVariant:boolean = false;
+  @Output() onMobileVariant:EventEmitter<boolean> = new EventEmitter<boolean>();
+  toggleSidebar() {
+    if (typeof window !== 'undefined' && window.innerWidth <= 1024) {
+      const next = !this.mobileVariant;
+      this.mobileVariant = next;
+      this.onMobileVariant.emit(next);
+    }
   }
 }

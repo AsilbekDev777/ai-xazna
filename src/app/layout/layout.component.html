@@ -1,7 +1,13 @@
 <div class="layout-container">
-  <app-sidebar class="sidebar" [miniVariant]="minVariant" (onMiniVariant)="isOpen($event)"></app-sidebar>
+  <app-sidebar
+    class="sidebar"
+    [miniVariant]="minVariant"
+    (onMiniVariant)="isOpen($event)"
+    [mobileVariant]="mobileVariant"
+    (onMobileVariant)="isSidebar($event)"
+  ></app-sidebar>
   <div class="sidebar-container">
-    <app-header></app-header>
+    <app-header [mobileVariant]="mobileVariant" (onMobileVariant)="isSidebar($event)"></app-header>
     <div>
       <router-outlet></router-outlet>
     </div>

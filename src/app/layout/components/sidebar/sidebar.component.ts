@@ -1,23 +1,23 @@
-import {Component, Input, Output,EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, SimpleChanges, OnChanges} from '@angular/core';
 import {SvgIconComponent} from '../../../utils/svg-icon/svg-icon.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {NgIf} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-sidebar',
-  standalone: true,
-  imports: [
-    SvgIconComponent,
-    RouterLink,
-    RouterLinkActive,
-    NgIf,
-    TranslatePipe
-  ],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+selector: 'app-sidebar',
+standalone: true,
+imports: [
+  SvgIconComponent,
+  RouterLink,
+  RouterLinkActive,
+  NgIf,
+  TranslatePipe
+],
+templateUrl: './sidebar.component.html',
+styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent{
   menuItems = [
     {
       label:'sidebar.MAINPAGE',
@@ -70,16 +70,21 @@ export class SidebarComponent {
       path:'settings',
     },
   ]
-  activeIndex: number | null = null;
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
-
-
   @Input() miniVariant:boolean = false;
   @Output() onMiniVariant:EventEmitter<boolean> = new EventEmitter<boolean>();
   toggleCollapsed() {
-    this.miniVariant = !this.miniVariant;
-    this.onMiniVariant.emit(this.miniVariant);
+    if (typeof window !== 'undefined' && window.innerWidth <= 1024) {
+      // telefonlarda: sidebarni yopish va parentga emit qilish
+      this.mobileVariant = false;
+      this.onMobileVariant.emit(false);
+    } else {
+      // desktop: miniVariant ishini davom ettir
+      this.miniVariant = !this.miniVariant;
+      this.onMiniVariant.emit(this.miniVariant);
+    }
   }
+
+  @Input() mobileVariant:boolean = false;
+  @Output() onMobileVariant: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 }

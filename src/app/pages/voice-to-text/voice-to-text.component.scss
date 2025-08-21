@@ -77,3 +77,12 @@
   padding: 7px;
   border: 1px solid #4D6BFE3D;
 }
+
+@media (max-width: 1024px) {
+  .upload-box {
+    width: 95%;
+  }
+  .result-box{
+    width: 95%;
+  }
+}

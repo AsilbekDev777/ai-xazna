@@ -1,7 +1,11 @@
 <div class="header-section">
   <div class="header-container flex justify-between">
-    <div class="header-left-content flex flex-row items-center" [class.collapsed]="miniVariant">
-      <button class="header-back-narrow" (click)="toggleCollapsed()">
+      <!-- Hamburger button -->
+    <div class="header-left-content flex flex-row items-center">
+      <button class="hamburger-btn" (click)="toggleSidebar()">
+        <img src="/assets/icons/sidebar-icons/hamburger.svg" alt="menu" />
+      </button>
+      <button class="header-back-narrow">
         <img src="/assets/icons/sidebar-icons/back-draw-icon.svg" alt="back">
       </button>
       <div class="header-left-content-image p-1">
